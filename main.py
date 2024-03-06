@@ -15,8 +15,8 @@ def requests_img() -> bytes: #获取google earth datauri
     return bytes(img_req, encoding="utf-8")
 
 
-def replace_img(img_req): #find/9之后的base64数据，解码，变换为灰度图像，保存，获取绝对路径，设置壁纸
-    img_req = img_req[img_req.find(b"/9") :]
+def replace_img(img_req: bytes) -> None: #find/9之后的base64数据，解码，变换为灰度图像，保存，获取绝对路径，设置壁纸
+    img_req = img_req[img_req.find(b"/9"):]
     img_base = base64.b64decode(img_req)
     # with open("1.jpg",'wb') as f:
     #     f.write(img_base)
