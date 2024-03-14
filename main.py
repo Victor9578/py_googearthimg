@@ -1,4 +1,4 @@
-import json, requests, random, ctypes, io, base64, os
+import json, requests, random, ctypes, io, base64, os, time
 from PIL import Image
 
 # photoid数据来源Google Earth 扩展数据
@@ -25,4 +25,5 @@ def replace_img(img_req: bytes) -> None: #find/9之后的base64数据，解码�
 
 
 if __name__ == "__main__":
+    time.sleep(180)
     replace_img(requests_img())
